@@ -1,11 +1,80 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html class="no-js" lang="">
+
 <head>
-    <meta charset="UTF-8">
-    <title>Matt Graham's Github Pages</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/style.css">
+
+  <title>Matt Graham</title>
+
+  <meta name="description" content="">
+  <meta property="og:title" content="">
+  <meta property="og:type" content="">
+  <meta property="og:url" content="">
+  <meta property="og:image" content="">
+  <meta property="og:image:alt" content="">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icon.png">
+  <meta name="theme-color" content="#fafafa">
 </head>
+
 <body>
-<h1>Hello, World</h1>
-<p>Define the underlying principles that drive decisions and strategy for your design language you gotta smoke test your hypothesis. Increase the resolution, scale it up we need a larger print call in the air support, so reach out, or root-and-branch review herding cats.</p>
+  <header class="home-title">
+    <img src="img/8rfwhfzikrsfe72pyou96duljt1u.jpeg" alt="Matt looking coy after getting a haircut">
+    <h1>Matt Graham</h1>
+    <p>Technologist</p>
+  </header>
+  <nav id="button-container">
+    <button class="mg-button webdev loader-btn" type="button" data-load="web-development">
+      <span>Web Development</span>
+      <img src="img/webdev.jpg" alt="web development code on a laptop screen">
+    </button>
+    <button class="mg-button audio loader-btn" type="button" data-load="audio-engineering">
+      <span>Audio Engineering</span>
+      <img src="img/audio.jpg" alt="audio mixing console with bright lights in a darkened room">
+    </button>
+    <button class="mg-button ai loader-btn" type="button" data-load="artificial-intelligence">
+      <span>Artificial Intelligence</span>
+      <img src="img/ai.jpg" alt="artistic lines in 3d space shooting downwards and toward you">
+    </button>
+    <button class="mg-button advocacy loader-btn" type="button" data-load="advocacy">
+      <span>Advocacy</span>
+      <img src="img/advocate.jpg" alt="person at a protest holding up a sign that reads no more silence">
+    </button>
+  </nav>
+  <footer>
+    <p>&copy; 2025 Matt Graham</p>
+    <nav>
+      <ul>
+        <li><button class="footer-btn loader-btn" data-load="privacy-policy">Privacy</button></li>
+        <li><button class="footer-btn loader-btn" data-load="terms-of-service">Terms</button></li>
+        <li><button class="footer-btn loader-btn" data-load="contact">Contact</button></li>
+      </ul>
+    </nav>
+    <p>I’m pullin’ for ya. We’re all in this together. – Red Green</p>
+  </footer>
+  <dialog id="content-dialog">
+    <div class="dialog-inner">
+      <button id="dialog-close">
+        <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M14.5 9.50002L9.5 14.5M9.49998 9.5L14.5 14.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          <path d="M7 3.33782C8.47087 2.48697 10.1786 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 10.1786 2.48697 8.47087 3.33782 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </button>
+      <div class="dialog-content">
+        <h2 id="dialog-title"></h2>
+        <div id="dialog-content"></div>
+      </div>
+    </div>
+  </dialog>
+  <script src="js/app.js"></script>
 </body>
+
 </html>
