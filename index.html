@@ -17,7 +17,9 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap"
+    rel="stylesheet">
 
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/icon.svg" type="image/svg+xml">
@@ -26,6 +28,7 @@
 </head>
 
 <body>
+<main>
   <header class="home-title">
     <img src="img/8rfwhfzikrsfe72pyou96duljt1u.jpeg" alt="Matt looking coy after getting a haircut">
     <h1>Matt Graham</h1>
@@ -49,32 +52,42 @@
       <img src="img/advocate.jpg" alt="person at a protest holding up a sign that reads no more silence">
     </button>
   </nav>
-  <footer>
-    <p>&copy; 2025 Matt Graham</p>
-    <nav>
-      <ul>
-        <li><button class="footer-btn loader-btn" data-load="privacy-policy">Privacy</button></li>
-        <li><button class="footer-btn loader-btn" data-load="terms-of-service">Terms</button></li>
-        <li><button class="footer-btn loader-btn" data-load="contact">Contact</button></li>
-      </ul>
-    </nav>
-    <p>I’m pullin’ for ya. We’re all in this together. – Red Green</p>
-  </footer>
-  <dialog id="content-dialog">
-    <div class="dialog-inner">
-      <button id="dialog-close">
-        <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M14.5 9.50002L9.5 14.5M9.49998 9.5L14.5 14.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-          <path d="M7 3.33782C8.47087 2.48697 10.1786 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 10.1786 2.48697 8.47087 3.33782 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-        </svg>
-      </button>
-      <div class="dialog-content">
-        <h2 id="dialog-title"></h2>
-        <div id="dialog-content"></div>
-      </div>
+</main>
+<footer>
+  <p>&copy; 2025 Matt Graham</p>
+  <nav>
+    <ul>
+      <li>
+        <button class="footer-btn loader-btn" data-load="privacy-policy">Privacy</button>
+      </li>
+      <li>
+        <button class="footer-btn loader-btn" data-load="terms-of-service">Terms</button>
+      </li>
+      <li>
+        <button class="footer-btn loader-btn" data-load="contact">Contact</button>
+      </li>
+    </ul>
+  </nav>
+  <blockquote>I’m pullin’ for ya. We’re all in this together.<cite> – Red Green</cite></blockquote>
+</footer>
+<dialog id="content-dialog">
+  <div class="dialog-inner">
+    <button id="dialog-close">
+      <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M14.5 9.50002L9.5 14.5M9.49998 9.5L14.5 14.5" stroke="currentColor" stroke-width="1.5"
+              stroke-linecap="round"/>
+        <path
+          d="M7 3.33782C8.47087 2.48697 10.1786 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 10.1786 2.48697 8.47087 3.33782 7"
+          stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+    </button>
+    <div class="dialog-content">
+      <h2 id="dialog-title"></h2>
+      <div id="dialog-content"></div>
     </div>
-  </dialog>
-  <script src="js/app.js"></script>
+  </div>
+</dialog>
+<script src="js/app.js"></script>
 </body>
 
 </html>
