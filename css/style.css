@@ -67,6 +67,10 @@ button {
 main {
   position: relative;
   height: calc(100vh - 80px);
+
+  @media (max-width: 768px) {
+    height: 80vh;
+  }
 }
 
 .home-title {
@@ -184,12 +188,16 @@ footer {
 
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
-    gap: 20px;
+    gap: 0;
     padding: 0 12px;
     width: calc( 100% - 24px );
+    height: 20vh;
 
     p, blockquote {
       text-align: center !important;
+      margin: 0;
+      font-size: 0.8rem;
+
 
       cite {
         display: block;
