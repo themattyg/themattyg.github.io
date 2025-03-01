@@ -307,63 +307,79 @@ footer {
   }
 }
 
-/* Open state of the dialog  */
-dialog:open {
-  opacity: 1;
-  transform: scaleY(1);
-}
-
-/* Closed state of the dialog   */
+/* Default closed state */
 dialog {
   opacity: 0;
-  transform: scaleY(0);
+  transform: scale(0);
   border: none;
   height: 60vh;
   width: 100%;
   backdrop-filter: blur(4px);
-  background-color: rgba(255,255,255,0.75);
+  background-color: rgba(255, 255, 255, 0.75);
+  display: none;
   transition:
     opacity 0.7s ease-out,
-    transform 0.7s ease-out,
-    overlay 0.7s ease-out allow-discrete,
-    display 0.7s ease-out allow-discrete;
-  /* Equivalent to
-  transition: all 0.7s allow-discrete; */
+    transform 0.7s ease-out;
 }
 
-/* Before open state  */
-/* Needs to be after the previous dialog:open rule to take effect,
-    as the specificity is the same */
-@starting-style {
-  dialog:open {
-    opacity: 0;
-    transform: scaleY(0);
-  }
+/* Open state */
+dialog[open] {
+  opacity: 1;
+  transform: scale(1);
+  display: block;
 }
 
-/* Transition the :backdrop when the dialog modal is promoted to the top layer */
+/* Backdrop */
 dialog::backdrop {
-  background-color: rgb(0 0 0 / 0%);
-  transition:
-    display 0.7s allow-discrete,
-    overlay 0.7s allow-discrete,
-    background-color 0.7s;
-  /* Equivalent to
-  transition: all 0.7s allow-discrete; */
+  background-color: rgba(0, 0, 0, 0%);
+  transition: background-color 0.7s ease-out;
 }
 
-dialog:open::backdrop {
+dialog[open]::backdrop {
   background-color: rgba(0, 0, 0, 0.8);
 }
 
-/* This starting-style rule cannot be nested inside the above selector
-because the nesting selector cannot represent pseudo-elements. */
+/* 🛠️ Advanced Features for Supporting Browsers (Ignored by Safari iOS) */
+@supports (transition: overlay 0.7s allow-discrete) {
+  dialog {
+    transition:
+      opacity 0.7s ease-out,
+      transform 0.7s ease-out,
+      overlay 0.7s ease-out allow-discrete,
+      display 0.7s ease-out allow-discrete;
+  }
 
-@starting-style {
-  dialog:open::backdrop {
-    background-color: rgba(0, 0, 0, 0.1);
+  dialog::backdrop {
+    transition:
+      display 0.7s allow-discrete,
+      overlay 0.7s allow-discrete,
+      background-color 0.7s;
   }
 }
+
+/* 🛠️ Advanced Starting Styles (Ignored by Safari iOS) */
+@supports (starting-style: all) {
+  @starting-style {
+    dialog:open {
+      opacity: 0;
+      transform: scaleY(0);
+    }
+
+    dialog:open::backdrop {
+      background-color: rgba(0, 0, 0, 0.1);
+    }
+  }
+}
+
+/* 🛑 Safari iOS Fallback - Uses a Special WebKit Hack */
+@supports not (selector(:has(*))) {
+  dialog {
+    transition:
+      opacity 0.7s ease-out,
+      transform 0.7s ease-out; /* Stripped-down transitions for Safari iOS */
+  }
+}
+
 
 .dialog-inner {
   position: relative;
